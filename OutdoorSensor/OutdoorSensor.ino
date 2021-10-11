@@ -58,7 +58,7 @@ void loop()
 void ATtiny85_sleep()
 {
   adc_disable();
-  set_sleep_mode(SLEEP_MODE_PWR_DOWN); 
+  set_sleep_mode(SLEEP_MODE_PWR_DOWN);
   sleep_enable();
   sleep_cpu();
 }
@@ -73,14 +73,6 @@ void setup_watchdog(byte sleep_time)
 ISR(WDT_vect)
 {
   watchdog_counter++;
-}
-
-void all_pins_output()
-{
-  for (byte ATtiny_pin; ATtiny_pin < 5; ATtiny_pin++)
-  {
-    pinMode(ATtiny_pin, OUTPUT);
-  }
 }
 
 void all_pins_input()
